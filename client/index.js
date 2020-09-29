@@ -1,3 +1,6 @@
-import {HECK} from "./constants";
+import React from "react";
+import ReactDOM from "react-dom";
+import Form from "./Form";
 
-console.log(HECK);
+const wrapper = document.getElementById("container");
+wrapper ? ReactDOM.render(<Form />, wrapper) : false;
