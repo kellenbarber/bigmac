@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const nodeExternals = require('webpack-node-externals');
 const path = require("path");
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
 		client: "./client/index.js"
 	},
 	output: {
-		filename: "[name].js",
+		filename: '[name].js',
 		path: __dirname + "/dist"
 	},
 	module: {
@@ -35,5 +36,8 @@ module.exports = {
 			filename: "./index.html",
 			chunks: ["client"]
 		})
+	],
+	externals: [
+		nodeExternals()
 	]
 }; 
