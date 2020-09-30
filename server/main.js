@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.get("/test", async (req, res) => {
+app.get("/country", async (req, res) => {
     getLocationData()
         .then(country => {
             res.send(country);
