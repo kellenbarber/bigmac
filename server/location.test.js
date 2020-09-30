@@ -27,5 +27,5 @@ it("throws an error with an invalid IP address", async () =>  {
     axios.get.mockRejectedValue("Error: Request failed with status code 400");
 
     const error = await getLocationData("jhsdfsdf");
-    expect(error).toEqual("There was a problem with the IP Address");
+    expect(error).toEqual("There was a problem getting the IP Address");
 });
