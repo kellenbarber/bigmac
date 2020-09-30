@@ -1,0 +1,16 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url("./img/bigmac.jpg");
+}
+
+.bigMacApp {
+    background-color: #fff;
+    border: #000 1px solid;
+    margin: 0 auto;
+    padding: 30px;
+    width: 50vw;
+}

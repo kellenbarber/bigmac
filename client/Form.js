@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./styles.css";
 
 const Form = props => {
   const {
@@ -16,7 +17,7 @@ const Form = props => {
 
   return country ? (
     <div>
-        <h1>{`You are in ${country}`}</h1>
+        <h1 className={"test"}>{`You are in ${country}`}</h1>
         <label for="money">Please enter an amount of money in your local currency:</label>
         <input type="text" name="money" onChange={handleChange}></input>
         <button onClick={handleClick}>Get BigMac Data</button>

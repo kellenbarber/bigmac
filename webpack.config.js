@@ -32,7 +32,7 @@ const clientConfig = {
     output: {
         filename: '[name].js',
 		path: __dirname + "/dist/public",
-		publicPath: "/static"
+		publicPath: "/static/"
     },
     module: {
         rules: [
@@ -50,8 +50,21 @@ const clientConfig = {
 						loader: "html-loader"
 					}
 				]
-			}
-		]
+			},
+			{
+				test: /\.css$/,
+				use: [
+					"style-loader",
+					"css-loader"
+				],
+			},
+			{
+				test: /\.(png|svg|jpg|gif)$/,
+				use: [
+					"file-loader"
+				],
+			},
+		],
     },
     plugins: [
 		new HtmlWebpackPlugin({

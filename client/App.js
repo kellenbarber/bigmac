@@ -3,6 +3,9 @@ import React from "react";
 import Form from "./Form";
 import getCountry from "./getCountry";
 
+import "./styles.css";
+import BigMac from "./img/bigmac.jpg";
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -21,7 +24,9 @@ class App extends React.Component {
 
     render() {
         return (
-            <Form country={this.state.country}/>
+            <div className={"bigMacApp"}>
+                <Form country={this.state.country}/>
+            </div>
         );
     }
 }
