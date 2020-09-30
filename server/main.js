@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test", async (req, res) => {
-    getLocationData("67.183.246.10")
+    getLocationData()
         .then(country => {
             res.send(country);
         });
