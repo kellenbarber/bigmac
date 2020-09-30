@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 
 const Form = props => {
+  const {
+    country
+  } = props;
   const [value, setValue] = useState("");
 
-  const getData = async () => {
-    const url = "http://localhost:5000/test";
-    const response = await fetch(url);
-    const data = await response.text();
-    return data;
+  const handleChange = event => {
+    setValue(event.target.value);
   }
 
   const handleClick = async () => {
-    const data = await getData();
-    setValue(data);
+    
   }
 
-  return (
+  return country ? (
     <div>
-        <h1>{value}</h1>
-        <button onClick={handleClick}>CLICK THE BUTTON</button>
+        <h1>{`You are in ${country}`}</h1>
+        <label for="money">Please enter an amount of money in your local currency:</label>
+        <input type="text" name="money" onChange={handleChange}></input>
+        <button onClick={handleClick}>Get BigMac Data</button>
     </div>
-  );
+  ) : null;
 }
 
 export default Form;
