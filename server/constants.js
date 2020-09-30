@@ -1,0 +1,1 @@
+export const IPVIGILANTE_ERROR = "There was a problem with the IP Address";
