@@ -1,6 +1,8 @@
-const express = require("express");
-const path = require("path");
-const logger = require("morgan");
+import express from "express";
+import path from "path";
+import logger from "morgan";
+
+import getLocationData from "./location";
 
 const app = express();
 const port = 5000;
@@ -12,8 +14,11 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.get("/test", (req, res) => {
-    res.send(req.ips);
+app.get("/test", async (req, res) => {
+    getLocationData("67.183.246.10")
+        .then(country => {
+            res.send(country);
+        });
 });
 
 app.listen(port, () => {
