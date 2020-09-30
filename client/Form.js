@@ -12,7 +12,6 @@ const Form = props => {
 
   const handleClick = async () => {
     const data = await getData();
-    console.log("data: ", data);
     setValue(data);
   }
 
