@@ -65,7 +65,10 @@ const clientConfig = {
 				],
 			},
 		],
-    },
+	},
+	optimization: {
+		minimize: false
+	},
     plugins: [
 		new HtmlWebpackPlugin({
 			template: "./client/index.html",
