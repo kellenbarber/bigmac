@@ -31,9 +31,6 @@ const parseBigMacCsvToObject = async csv => {
         }
     });
 
-    // delete data for United States to simplify getting random country
-    delete countryDataObject["United States"];
-
     return countryDataObject;
 }
 

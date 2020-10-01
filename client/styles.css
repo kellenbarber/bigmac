@@ -7,6 +7,10 @@ body {
     background-image: url("./img/bigmac.jpg");
 }
 
+#container {
+    margin-top: 40px;
+}
+
 .bigMacApp {
     background-color: #fff;
     border: #000 1px solid;

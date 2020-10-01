@@ -1,20 +1,25 @@
 // Form.js
 
 import React, { useState } from "react";
+
 import "./styles.css";
+import getBigMacs from "./getBigMacs";
 
 const Form = props => {
   const {
-    country
+    country,
+    updateBigMacs,
+    updateCurrencyAmount
   } = props;
-  const [value, setValue] = useState("");
 
   const handleChange = event => {
-    setValue(event.target.value);
+    updateCurrencyAmount(event.target.value);
   }
 
   const handleClick = async () => {
-    
+    getBigMacs().then(bigMacs => {
+      updateBigMacs(bigMacs);
+  });
   }
 
   return country ? (
@@ -25,6 +30,6 @@ const Form = props => {
         <button onClick={handleClick}>Get BigMac Data</button>
     </div>
   ) : null;
-}
+};
 
 export default Form;
