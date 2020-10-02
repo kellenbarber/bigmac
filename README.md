@@ -1,7 +1,11 @@
 ## Installation & Usage
 Just run `npm install` to install dependencies. Run `npm run build && npm run start` on the first run to build & run the application. On subsequent occurrences you can just do `npm run start`.
 
-You can then visit the Big Mac app by navigating to `http://localhost:5000/`.
+You can then visit the Big Mac app by navigating to `http://localhost:5000/ `.
+
+*Note regarding VS Code and WSL*
+
+I developed this using VS Code on WSL. I occasionally had `EACCES` issues when installing npm packages - I think this is an issue with this specific combination of tools, but if you encounter it I was able to solve the problem by terminating VS Code. I promise I'm not installing anything weird - you can look at the `package.json`.
 
 ## Calculations
 I wasn't sure that I understood what the units in the provided price calculations represented since they didn't exactly match headers in the Big Mac csv data, and I don't have a good intuition for the prices of hamburgers in other countries. I went with the approach I did because the conversions approximately checked out when I compared them to the results I got at the [this website](https://fxtop.com/en/historical-currency-converter.php), and because the method was the same as what I was taught for converting units back in physics class. The results seem reasonable even if they're not always exactly what I would expect.
