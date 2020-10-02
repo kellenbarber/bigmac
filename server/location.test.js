@@ -1,6 +1,6 @@
 // location.test.js
 
-import getLocationData from "./location";
+import getLocationData from "./locationClient";
 import axios from "axios";
 
 jest.mock("axios");

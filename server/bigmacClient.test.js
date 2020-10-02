@@ -2,7 +2,7 @@
 
 import {
     parseBigMacCsvToObject
-} from "./bigmac";;
+} from "./bigmacClient";;
 import {
     expectedBigMacData
 } from "./bigmacdata";
