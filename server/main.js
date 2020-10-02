@@ -4,11 +4,11 @@ import express from "express";
 import path from "path";
 import logger from "morgan";
 
-import getLocationData from "./location";
+import getLocationData from "./locationClient";
 import {
     getBigMacData,
     parseBigMacCsvToObject
-} from "./bigmac";
+} from "./bigmacClient";
 
 const app = express();
 const port = 5000;
