@@ -24,12 +24,9 @@ const parseBigMacCsvToObject = async csv => {
         if (temp[0]) {
             countryDataObject[temp[0]] = {
                 Country: temp[0],
-                Date: temp[1],
                 LocalPrice: temp[2],
-                DollarEx: temp[3],
                 DollarPrice: temp[4],
-                DollarPPP: temp[5],
-                DollarValuation: temp[6]
+                DollarPPP: temp[5]
             }; 
         }
     });
