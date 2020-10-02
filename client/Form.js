@@ -1,6 +1,6 @@
 // Form.js
 
-import React, { useState } from "react";
+import React from "react";
 
 import "./styles.css";
 import getBigMacs from "./getBigMacs";
@@ -24,7 +24,7 @@ const Form = props => {
 
   return country ? (
     <div>
-        <h1 className={"countryHeader"}>{`You are in ${country}`}</h1>
+        <h1 className={"countryHeader"}>You are in {country === "United States" ? "the" : null} {country}</h1>
         <label for="money">Please enter an amount of money in your local currency:</label>
         <input type="text" name="money" onChange={handleChange}></input>
         <button onClick={handleClick}>Get BigMac Data</button>

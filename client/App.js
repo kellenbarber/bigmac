@@ -52,11 +52,15 @@ class App extends React.Component {
         } = this.state;
         return (
             <div className={"bigMacApp"}>
-                <Form
-                    country={country}
-                    updateBigMacs={this.updateBigMacs}
-                    updateCurrencyAmount={this.updateCurrencyAmount}
-                />
+                {
+                    country ? (
+                        <Form
+                            country={country}
+                            updateBigMacs={this.updateBigMacs}
+                            updateCurrencyAmount={this.updateCurrencyAmount}
+                        />
+                    ) : null
+                }
                 {
                     bigMacData.CurrentCountry ? (
                         <LocalResults
