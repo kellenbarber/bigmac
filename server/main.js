@@ -15,8 +15,8 @@ const port = 5000;
 
 // this will contain the big mac data object once we get that from github
 let bigMacData;
-let usBigMacData;
-let country = "United States"; // TODO: set this when we get the country data
+let localBigMacData;
+let country;
 
 app.use("/static", express.static(__dirname + "/public"));
 app.use(logger("dev"));
@@ -26,18 +26,23 @@ app.get("/", (req, res) => {
 });
 
 app.get("/country", async (req, res) => {
-    // getLocationData()
-    //     .then(country => {
-    //         res.send(country);
-    //     });
-    res.send("United States");
+    getLocationData()
+        .then(response => {
+            country = response;
+            res.send(country);
+        });
 });
 
 app.get("/bigmacs", async (req, res) => {
     const keys = Object.keys(bigMacData);
     const randomCountry = keys[Math.floor(Math.random() * keys.length)];
+    // storing country data and then removing it simplifies getting random country data
+    if (localBigMacData === undefined) {
+        localBigMacData = bigMacData[country];
+        delete bigMacData[country];
+    }
     res.send({
-        "CurrentCountry" : usBigMacData,
+        "CurrentCountry" : localBigMacData,
         "RandomCountry" : bigMacData[randomCountry]
     });
 });
@@ -46,10 +51,6 @@ app.listen(port, () => {
     getBigMacData()
         .then(async data => {
             bigMacData = await parseBigMacCsvToObject(data);
-            // storing country data and then removing it simplifies getting random country data
-            // TODO: make this work for other countries
-            usBigMacData = bigMacData["United States"];
-            delete bigMacData["United States"];
         });
     console.log(`Example app listening at http://localhost:${port}`);
 });
