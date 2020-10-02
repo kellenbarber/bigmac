@@ -1,3 +1,6 @@
+## Purpose
+This application uses a 3rd party service to determine the user's country using their IP address. The user is then prompted to enter a value in their local currency. When they submit the number of Big Macs they could purchase locally, the number of Big Macs they could purchase in another country chosen at random, and the nominal value of amount of money they entered in the currency of the random country is displayed.
+
 ## Installation & Usage
 Just run `npm install` to install dependencies. Run `npm run build && npm run start` on the first run to build & run the application. On subsequent occurrences you can just do `npm run start`.
 
