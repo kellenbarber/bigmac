@@ -1,3 +1,5 @@
+// bigmac.test.js
+
 import {
     parseBigMacCsvToObject
 } from "./bigmac";;

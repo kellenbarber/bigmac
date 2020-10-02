@@ -1,3 +1,5 @@
+// location.js
+
 import axios from "axios";
 
 import {IPVIGILANTE_ERROR} from "./constants";

@@ -1,3 +1,5 @@
+// location.test.js
+
 import getLocationData from "./location";
 import axios from "axios";
 
