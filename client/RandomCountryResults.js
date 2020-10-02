@@ -6,8 +6,7 @@ import "./styles.css";
 const RandomCountryResults = props => {
     const {
         bigMacData,
-        amount,
-        localDollarPrice
+        amount
     } = props;
 
     // (calculation is (INPUT / local price) * (local dollarprice / RAND COUNTRY dollar price) 

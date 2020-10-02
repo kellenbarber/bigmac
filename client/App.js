@@ -74,7 +74,6 @@ class App extends React.Component {
                         <RandomCountryResults
                             bigMacData={bigMacData.RandomCountry}
                             amount={value}
-                            localDollarPrice={bigMacData.CurrentCountry.DollarPrice}
                         />
                     ) : null
                 }
