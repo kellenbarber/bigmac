@@ -21,6 +21,7 @@ const parseBigMacCsvToObject = async csv => {
        // overwrite existing records so that we are using the most recent data for each country
         if (temp[0]) {
             countryDataObject[temp[0]] = {
+                Country: temp[0],
                 Date: temp[1],
                 LocalPrice: temp[2],
                 DollarEx: temp[3],

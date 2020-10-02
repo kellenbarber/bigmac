@@ -4,6 +4,7 @@ import React from "react";
 
 import Form from "./Form";
 import LocalResults from "./LocalResults";
+import RandomCountryResults from "./RandomCountryResults";
 import getCountry from "./getCountry";
 
 import "./styles.css";
@@ -56,10 +57,23 @@ class App extends React.Component {
                     updateBigMacs={this.updateBigMacs}
                     updateCurrencyAmount={this.updateCurrencyAmount}
                 />
-                <LocalResults
-                    bigMacData={bigMacData}
-                    amount={value}    
-                />
+                {
+                    bigMacData.CurrentCountry ? (
+                        <LocalResults
+                            bigMacData={bigMacData.CurrentCountry}
+                            amount={value}    
+                        />
+                    ) : null
+                }
+                {
+                    bigMacData.RandomCountry ? (
+                        <RandomCountryResults
+                            bigMacData={bigMacData.RandomCountry}
+                            amount={value}
+                            localDollarPrice={bigMacData.CurrentCountry.DollarPrice}
+                        />
+                    ) : null
+                }
             </div>
         );
     }

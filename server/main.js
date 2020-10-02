@@ -36,7 +36,7 @@ app.get("/bigmacs", async (req, res) => {
     const randomCountry = keys[Math.floor(Math.random() * keys.length)];
     res.send({
         "CurrentCountry" : usBigMacData,
-        [randomCountry]: bigMacData[randomCountry]
+        "RandomCountry" : bigMacData[randomCountry]
     });
 });
 
